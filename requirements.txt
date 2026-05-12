@@ -1,0 +1,6 @@
+python-telegram-bot==21.11.1
+fastapi==0.136.1
+uvicorn[standard]==0.46.0
+opencv-python==4.13.0.92
+python-dotenv==1.0.1
+pydantic==2.13.4
