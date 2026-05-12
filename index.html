@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Camera Panel</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="title">
+        <div>
+          <p class="system-label">Laptop Camera</p>
+          <h1 id="title">Control Panel</h1>
+        </div>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Toggle theme">
+          <span class="sun"></span>
+        </button>
+      </section>
+
+      <section class="status-grid" aria-label="Status">
+        <article class="glass-card status-card">
+          <span class="status-dot online" id="laptopDot"></span>
+          <div>
+            <p>Laptop</p>
+            <strong id="laptopStatus">Online</strong>
+          </div>
+        </article>
+        <article class="glass-card status-card">
+          <span class="status-dot unknown" id="cameraDot"></span>
+          <div>
+            <p>Camera</p>
+            <strong id="cameraStatus">Checking</strong>
+          </div>
+        </article>
+      </section>
+
+      <section class="glass-card action-card">
+        <div class="card-heading">
+          <div>
+            <p class="system-label">Photo</p>
+            <h2>Instant capture</h2>
+          </div>
+          <span class="glyph camera-glyph" aria-hidden="true"></span>
+        </div>
+        <button class="primary-button" id="photoButton" type="button">Take Photo</button>
+      </section>
+
+      <section class="glass-card action-card">
+        <div class="card-heading">
+          <div>
+            <p class="system-label">Video</p>
+            <h2>Record clip</h2>
+          </div>
+          <span class="glyph record-glyph" aria-hidden="true"></span>
+        </div>
+
+        <div class="segment-control" role="radiogroup" aria-label="Video duration">
+          <button class="segment active" data-duration="5" type="button">5s</button>
+          <button class="segment" data-duration="10" type="button">10s</button>
+          <button class="segment" data-duration="15" type="button">15s</button>
+          <button class="segment" data-duration="30" type="button">30s</button>
+          <button class="segment" data-duration="60" type="button">60s</button>
+        </div>
+
+        <button class="secondary-button" id="recordButton" type="button">Record</button>
+      </section>
+
+      <section class="glass-card details-card">
+        <div class="detail-row">
+          <span>Uptime</span>
+          <strong id="uptimeValue">--</strong>
+        </div>
+        <div class="detail-row">
+          <span>Last command</span>
+          <strong id="lastCommandValue">--</strong>
+        </div>
+        <div class="detail-row">
+          <span>Route</span>
+          <strong id="routeValue">Local API</strong>
+        </div>
+      </section>
+
+      <div class="bottom-actions">
+        <button class="text-button" id="refreshButton" type="button">Refresh Status</button>
+        <button class="text-button danger" id="restartButton" type="button">Restart Camera</button>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
